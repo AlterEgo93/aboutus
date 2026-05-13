@@ -1,8 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="#fdba74" stroke-width="4" stroke-linejoin="round">
-  <path d="M25,15 L75,15 L75,40 Q75,65 50,75 Q25,65 25,40 Z" fill="rgba(234,88,12,0.1)"/>
-  <line x1="50" y1="15" x2="50" y2="75" stroke="rgba(253,186,116,0.4)"/>
-  <!-- Внутрішній шеврон -->
-  <path d="M35,35 L50,50 L65,35" stroke="#fdba74" stroke-width="4"/>
-  <!-- Текст -->
-  <text x="50" y="95" font-family="Montserrat, sans-serif" font-size="22" font-weight="900" fill="#ffffff" stroke="none" text-anchor="middle">200</text>
+  <!-- Контур щита та напівпрозоре тло -->
+  <path d="M20,15 L80,15 L80,45 Q80,75 50,90 Q20,75 20,45 Z" fill="rgba(234,88,12,0.15)"/>
+  
+  <!-- Цифри 200 по центру щита -->
+  <text x="50" y="56" font-family="Montserrat, sans-serif" font-size="26" font-weight="900" fill="#ffffff" stroke="none" text-anchor="middle">200</text>
 </svg>
