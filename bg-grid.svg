@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+  <defs>
+    <!-- Дрібна сітка -->
+    <pattern id="smallGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(56, 189, 248, 0.04)" stroke-width="0.5"/>
+    </pattern>
+    <!-- Велика сітка -->
+    <pattern id="largeGrid" width="100" height="100" patternUnits="userSpaceOnUse">
+      <rect width="100" height="100" fill="url(#smallGrid)"/>
+      <path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(56, 189, 248, 0.12)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <!-- Темне тло -->
+  <rect width="100%" height="100%" fill="#0a0d12"/>
+  
+  <!-- Накладання сітки -->
+  <rect width="100%" height="100%" fill="url(#largeGrid)"/>
+  
+  <!-- Декоративні елементи креслення (Sci-Fi) -->
+  <g stroke="rgba(56, 189, 248, 0.3)" stroke-width="1" fill="none">
+    <!-- Радар / Ціль -->
+    <circle cx="200" cy="200" r="80" stroke-dasharray="4 4"/>
+    <circle cx="200" cy="200" r="50" stroke="rgba(56, 189, 248, 0.1)"/>
+    <circle cx="200" cy="200" r="2" fill="rgba(56, 189, 248, 0.5)"/>
+    <line x1="100" y1="200" x2="300" y2="200"/>
+    <line x1="200" y1="100" x2="200" y2="300"/>
+    
+    <!-- Координати та текст -->
+    <text x="215" y="185" fill="rgba(56, 189, 248, 0.5)" font-family="monospace" font-size="12" stroke="none">SEC_ALPHA: 48.74°N 37.54°E</text>
+    <text x="215" y="270" fill="rgba(56, 189, 248, 0.3)" font-family="monospace" font-size="10" stroke="none">GRID.REF // 8892-XT</text>
+
+    <!-- Декоративні кутові маркери -->
+    <path d="M 800 150 L 850 150 L 850 200" stroke-width="2" stroke="rgba(56, 189, 248, 0.4)"/>
+    <text x="760" y="140" fill="rgba(56, 189, 248, 0.4)" font-family="monospace" font-size="10" stroke="none">SYS.ALIGNMENT.OK</text>
+  </g>
+</svg>
