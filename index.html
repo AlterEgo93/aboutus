@@ -2,7 +2,8 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=1400">
+    
     <title>Alter Ego</title>
     <!-- Підключення шрифтів -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -61,7 +62,8 @@
         /* Верхня панель (перемикач мов) */
         .header-controls {
             width: 100%;
-            max-width: 1400px;
+            max-width: 95%;
+            
             display: flex;
             justify-content: flex-end;
             margin-bottom: 1rem;
@@ -100,16 +102,15 @@
         /* Головна сітка дашборду */
         .dashboard-container {
             width: 100%;
-            max-width: 1400px;
+            max-width: 95%;
+            
             display: grid;
             grid-template-columns: 300px 1fr 380px;
             gap: 1.5rem;
             position: relative;
         }
 
-        @media (max-width: 1150px) {
-            .dashboard-container { grid-template-columns: 1fr; gap: 2rem; }
-        }
+        
 
         /* Скляні панелі */
         .glass-panel {
@@ -180,9 +181,7 @@
             width: 100%;
         }
 
-        @media (max-width: 768px) {
-            .center-panels-grid { grid-template-columns: 1fr; }
-        }
+        
 
         .impact-card { display: flex; flex-direction: column; justify-content: center; }
 
