@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alter Ego</title>
+    <title>Дашборд Alter Ego</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
@@ -29,7 +29,6 @@
 
         body {
             background-color: var(--bg-base);
-            /* Фонова сітка (підкладіть файл bg-grid.jpg для текстури мілітарі-креслення, або залишиться CSS-сітка) */
             background-image: 
                 linear-gradient(rgba(10, 13, 18, 0.85), rgba(10, 13, 18, 0.85)),
                 url('bg-grid.jpg');
@@ -46,7 +45,6 @@
             overflow-x: hidden;
         }
 
-        /* Верхня панель з перемикачем мов */
         .header-controls {
             width: 100%;
             max-width: 1400px;
@@ -64,7 +62,6 @@
             display: flex;
             gap: 4px;
             backdrop-filter: blur(10px);
-            box-shadow: 0 0 15px rgba(0,0,0,0.5);
         }
 
         .lang-btn {
@@ -76,7 +73,6 @@
             font-weight: 600;
             font-size: 0.85rem;
             cursor: pointer;
-            outline: none;
         }
 
         .lang-btn.active {
@@ -85,119 +81,66 @@
             box-shadow: 0 0 10px rgba(2, 132, 199, 0.5);
         }
 
-        /* Головний контейнер дашборду */
         .dashboard-container {
             width: 100%;
             max-width: 1400px;
             display: grid;
             grid-template-columns: 300px 1fr 380px;
             gap: 1.5rem;
-            position: relative;
         }
 
         @media (max-width: 1150px) {
-            .dashboard-container {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
+            .dashboard-container { grid-template-columns: 1fr; }
         }
 
-        /* Стилі для скляних панелей (Glassmorphism) */
         .glass-panel {
             background: var(--panel-bg);
             backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
             border: 1px solid var(--panel-border);
             border-top: 1px solid var(--panel-border-highlight);
             border-radius: 16px;
             padding: 1.5rem;
-            box-shadow: 
-                0 20px 40px rgba(0, 0, 0, 0.6),
-                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
             position: relative;
-            overflow: hidden;
         }
 
-        .glass-panel::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            border-radius: 16px;
-            pointer-events: none;
-            box-shadow: inset 0 0 20px rgba(56, 189, 248, 0.03);
-        }
-
-        /* ЛІВА КОЛОНКА: Схеми */
-        .left-column {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .diagram-wrapper {
-            height: 180px;
-            border-radius: 12px;
-            border: 1px dashed rgba(56, 189, 248, 0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-            position: relative;
-            background-color: rgba(0, 0, 0, 0.2);
-        }
-
-        /* Заглушки для схем (поки немає картинок) */
-        .diagram-placeholder-text {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        /* ЦЕНТРАЛЬНА КОЛОНКА */
-        .center-column {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 2rem;
-        }
-
-        /* Головний заголовок та емблема */
+        /* Центральний блок з емблемою */
         .brand-section {
             display: flex;
             flex-direction: column;
             align-items: center;
+            width: 100%;
             margin-bottom: 0.5rem;
         }
 
-        .main-title {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 3rem;
-            font-weight: 900;
-            letter-spacing: 6px;
-            color: #ffffff;
-            text-shadow: 0 0 20px rgba(255, 255, 255, 0.4), 0 5px 15px rgba(0,0,0,0.8);
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-
         .emblem-container {
-            width: 220px;
-            height: 220px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            /* Місце для центрального 3D логотипу Alter Ego */
+            width: 320px;
+            height: 320px;
             background-image: url('emblem-alter-ego.png');
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
-            filter: drop-shadow(0 15px 15px rgba(0,0,0,0.8));
+            filter: drop-shadow(0 15px 25px rgba(0,0,0,0.9));
+            margin-top: -10px;
         }
 
-        /* Панелі контенту по центру */
+        /* Компоновка контенту */
+        .left-column { display: flex; flex-direction: column; gap: 1.5rem; }
+        .center-column { display: flex; flex-direction: column; align-items: center; gap: 2rem; }
+        
+        .diagram-wrapper {
+            height: 180px;
+            border: 1px dashed rgba(56, 189, 248, 0.2);
+            border-radius: 12px;
+            background-color: rgba(0, 0, 0, 0.2);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
         .center-panels-grid {
             display: grid;
             grid-template-columns: 1fr 1.2fr;
@@ -205,45 +148,21 @@
             width: 100%;
         }
 
-        @media (max-width: 768px) {
-            .center-panels-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .impact-card {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
+        @media (max-width: 768px) { .center-panels-grid { grid-template-columns: 1fr; } }
 
         .impact-title {
             font-size: 1.8rem;
             font-weight: 800;
             line-height: 1.2;
             margin-bottom: 1.5rem;
-            letter-spacing: 0.5px;
             background: linear-gradient(135deg, #fff 60%, #94a3b8);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .impact-divider {
-            height: 2px;
-            background: linear-gradient(90deg, var(--accent-blue), transparent);
-            margin-bottom: 1.5rem;
-        }
-
-        .impact-subtitle {
-            font-size: 1rem;
-            color: var(--text-muted);
-            line-height: 1.5;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .overview-title {
+        .impact-divider { height: 2px; background: linear-gradient(90deg, var(--accent-blue), transparent); margin-bottom: 1.5rem; }
+        
+        .overview-title, .metrics-title {
             font-size: 1.1rem;
             font-weight: 700;
             text-transform: uppercase;
@@ -252,95 +171,20 @@
             color: var(--cyan-glow);
         }
 
-        .overview-text {
-            font-size: 0.9rem;
-            line-height: 1.6;
-            color: var(--text-muted);
-            margin-bottom: 1.2rem;
-        }
-        .overview-text:last-child { margin-bottom: 0; }
-
-        .highlight-text {
-            color: #fff;
-            font-weight: 700;
-            border-bottom: 1px solid var(--cyan-glow);
+        .metrics-list { display: flex; flex-direction: column; gap: 1.2rem; }
+        .metric-item { display: flex; align-items: center; gap: 1.2rem; padding-bottom: 1.2rem; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+        .metric-icon { 
+            width: 55px; height: 55px; flex-shrink: 0; border-radius: 10px; 
+            background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1);
+            display: flex; align-items: center; justify-content: center;
+            background-size: cover; font-weight: 800; color: var(--cyan-glow);
         }
 
-        /* ПРАВА КОЛОНКА: Метрики */
-        .metrics-title {
-            font-size: 1.1rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 1.5rem;
-            color: var(--cyan-glow);
-        }
+        .metric-value { font-size: 1.5rem; font-weight: 800; color: #fff; }
+        .metric-label { font-size: 0.8rem; color: var(--text-muted); font-weight: 500; }
+        .highlight-text { color: #fff; font-weight: 700; border-bottom: 1px solid var(--cyan-glow); }
 
-        .metrics-list {
-            display: flex;
-            flex-direction: column;
-            gap: 1.2rem;
-        }
-
-        .metric-item {
-            display: flex;
-            align-items: center;
-            gap: 1.2rem;
-            padding-bottom: 1.2rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .metric-item:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
-        }
-
-        .metric-icon {
-            width: 55px;
-            height: 55px;
-            flex-shrink: 0;
-            border-radius: 10px;
-            background-color: rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-size: cover;
-            background-position: center;
-            font-weight: 800;
-            font-size: 0.8rem;
-            color: var(--cyan-glow);
-            box-shadow: inset 0 0 10px rgba(255,255,255,0.05);
-        }
-
-        /* Стилізації специфічних іконок (можна підкласти готові картинки) */
-        .icon-missions { background-image: url('icon-missions.png'); }
-        .icon-traversed { background-image: url('icon-traversed.png'); }
-        .icon-300 { background-image: url('icon-300.png'); background-color: rgba(6, 148, 162, 0.2); border-color: rgba(6, 148, 162, 0.5); font-size: 1rem; color: #67e8f9;}
-        .icon-200 { background-image: url('icon-200.png'); background-color: rgba(234, 88, 12, 0.2); border-color: rgba(234, 88, 12, 0.5); font-size: 1rem; color: #fdba74;}
-        .icon-cargo { background-image: url('icon-cargo.png'); }
-
-        .metric-data {
-            display: flex;
-            flex-direction: column;
-            gap: 0.2rem;
-        }
-
-        .metric-value {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: #ffffff;
-            letter-spacing: 0.5px;
-        }
-
-        .metric-label {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            line-height: 1.3;
-            font-weight: 500;
-        }
-
-        /* Приховування елементів для відображення потрібної мови */
+        /* Логіка перемикання мов */
         [data-lang] { display: none; }
         body.lang-uk [data-lang="uk"] { display: block; }
         body.lang-uk span[data-lang="uk"] { display: inline; }
@@ -358,133 +202,98 @@
     </div>
 
     <div class="dashboard-container">
-
+        
+        <!-- ЛІВА КОЛОНКА -->
         <div class="left-column">
             <div class="glass-panel">
-                <div class="overview-title" style="margin-bottom: 0.8rem;">
-                    <span data-lang="uk">НРК Воля-Е</span>
-                    <span data-lang="en">UGV-E</span>
+                <div class="overview-title" style="margin-bottom: 0.5rem;">
+                    <span data-lang="uk">НРК Воля-Е</span><span data-lang="en">UGV-E</span>
                 </div>
                 <div style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 1rem;">
-                    <span data-lang="uk">(Наземний роботизований комплекс)</span>
-                    <span data-lang="en">(Unmanned Ground Vehicle)</span>
+                    <span data-lang="uk">(Наземний роботизований комплекс)</span><span data-lang="en">(Unmanned Ground Vehicle)</span>
                 </div>
-                <div class="diagram-wrapper" style="background-image: url('ugv-diagram-top.png');">
-                    <span class="diagram-placeholder-text">Схема 1</span>
-                </div>
+                <div class="diagram-wrapper" style="background-image: url('ugv-diagram-top.png');"></div>
             </div>
-
             <div class="glass-panel">
-                <div class="diagram-wrapper" style="background-image: url('ugv-diagram-side.png');">
-                    <span class="diagram-placeholder-text">Схема 2</span>
-                </div>
+                <div class="diagram-wrapper" style="background-image: url('ugv-diagram-side.png');"></div>
             </div>
         </div>
 
+        <!-- ЦЕНТРАЛЬНА КОЛОНКА -->
         <div class="center-column">
             <div class="brand-section">
-                <h1 class="main-title">ALTER EGO</h1>
+                <!-- Текст видалено, оскільки він є на емблемі -->
                 <div class="emblem-container"></div>
             </div>
 
             <div class="center-panels-grid">
-                <div class="glass-panel impact-card">
+                <div class="glass-panel">
                     <div class="impact-title">
                         <span data-lang="uk">6 МІСЯЦІВ<br>РОБОТИ НА<br>РЕЗУЛЬТАТ</span>
                         <span data-lang="en">6 MONTHS OF<br>UNRELENTING<br>IMPACT</span>
                     </div>
                     <div class="impact-divider"></div>
-                    <div class="impact-subtitle">
+                    <div style="font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted);">
                         <span data-lang="uk">Переосмислення фронтової логістики</span>
-                        <span data-lang="en">Redefining Frontline Logistics & Support</span>
+                        <span data-lang="en">Redefining Frontline Logistics</span>
                     </div>
                 </div>
 
                 <div class="glass-panel">
                     <div class="overview-title">
-                        <span data-lang="uk">Оперативний огляд</span>
-                        <span data-lang="en">Operational Overview</span>
+                        <span data-lang="uk">Оперативний огляд</span><span data-lang="en">Operational Overview</span>
                     </div>
-                    <div class="overview-text">
+                    <p style="font-size: 0.9rem; line-height: 1.6; color: var(--text-muted); margin-bottom: 1rem;">
                         <span data-lang="uk">За перші шість місяців роботи підрозділ «Alter Ego» довів виняткову цінність наземних роботизованих комплексів у середовищах з високим ризиком.</span>
-                        <span data-lang="en">In our first six months of operation, the Alter Ego unit has proven the exceptional value of Unmanned Ground Vehicles in high-risk environments.</span>
-                    </div>
-                    <div class="overview-text">
-                        <span data-lang="uk">Працюючи цілодобово, наші системи виконали понад <span class="highlight-text">1 200 критичних місій</span>, радикально зменшуючи фізичну присутність та відповідний ризик для військових на лінії фронту.</span>
-                        <span data-lang="en">Operating around the clock, our systems have executed <span class="highlight-text">over 1,200 critical missions</span>, drastically reducing the physical risk to our personnel while maintaining a massive logistical footprint.</span>
-                    </div>
+                        <span data-lang="en">In our first six months of operation, the Alter Ego unit has proven the value of Unmanned Ground Vehicles in high-risk environments.</span>
+                    </p>
+                    <p style="font-size: 0.9rem; line-height: 1.6; color: var(--text-muted);">
+                        <span data-lang="uk">Наші системи виконали понад <span class="highlight-text">1 200 критичних місій</span>, радикально зменшуючи ризики для військових.</span>
+                        <span data-lang="en">Our systems have executed <span class="highlight-text">over 1,200 critical missions</span>, drastically reducing physical risk to personnel.</span>
+                    </p>
                 </div>
             </div>
         </div>
 
-        <div class="glass-panel" style="display: flex; flex-direction: column;">
+        <!-- ПРАВА КОЛОНКА -->
+        <div class="glass-panel">
             <div class="metrics-title">
-                <span data-lang="uk">Ключові показники</span>
-                <span data-lang="en">Key Metrics</span>
+                <span data-lang="uk">Ключові показники</span><span data-lang="en">Key Metrics</span>
             </div>
-
             <div class="metrics-list">
                 <div class="metric-item">
-                    <div class="metric-icon icon-missions">⬡</div>
+                    <div class="metric-icon" style="background-image: url('icon-missions.png');">⬡</div>
                     <div class="metric-data">
-                        <div class="metric-value">
-                            <span data-lang="uk">1 269</span>
-                            <span data-lang="en">1,269</span>
-                        </div>
-                        <div class="metric-label">
-                            <span data-lang="uk">Всього виконано місій</span>
-                            <span data-lang="en">Total Missions Executed</span>
-                        </div>
+                        <div class="metric-value">1 269</div>
+                        <div class="metric-label"><span data-lang="uk">Всього місій</span><span data-lang="en">Total Missions</span></div>
                     </div>
                 </div>
-
                 <div class="metric-item">
-                    <div class="metric-icon icon-traversed">⤏</div>
+                    <div class="metric-icon" style="background-image: url('icon-traversed.png');">⤏</div>
                     <div class="metric-data">
-                        <div class="metric-value">
-                            <span data-lang="uk">20 194 км</span>
-                            <span data-lang="en">20,194 km</span>
-                        </div>
-                        <div class="metric-label">
-                            <span data-lang="uk">Пройдено в зонах бойових дій</span>
-                            <span data-lang="en">Traversed in Combat Zones</span>
-                        </div>
+                        <div class="metric-value">20 194 км</div>
+                        <div class="metric-label"><span data-lang="uk">Пройдено в боях</span><span data-lang="en">Traversed in Combat</span></div>
                     </div>
                 </div>
-
                 <div class="metric-item">
-                    <div class="metric-icon icon-300">300</div>
+                    <div class="metric-icon" style="background-image: url('icon-300.png'); color: #67e8f9;">300</div>
                     <div class="metric-data">
                         <div class="metric-value">38</div>
-                        <div class="metric-label">
-                            <span data-lang="uk">Поранених безпечно евакуйовано</span>
-                            <span data-lang="en">Wounded Personnel (300s) Safely Evacuated</span>
-                        </div>
+                        <div class="metric-label"><span data-lang="uk">Поранених евакуйовано</span><span data-lang="en">Wounded Evacuated</span></div>
                     </div>
                 </div>
-
                 <div class="metric-item">
-                    <div class="metric-icon icon-200">200</div>
+                    <div class="metric-icon" style="background-image: url('icon-200.png'); color: #fdba74;">200</div>
                     <div class="metric-data">
                         <div class="metric-value">29</div>
-                        <div class="metric-label">
-                            <span data-lang="uk">Загиблих евакуйовано з гідністю</span>
-                            <span data-lang="en">Fallen Personnel (200s) Recovered with Dignity</span>
-                        </div>
+                        <div class="metric-label"><span data-lang="uk">Загиблих евакуйовано</span><span data-lang="en">Fallen Recovered</span></div>
                     </div>
                 </div>
-
                 <div class="metric-item">
-                    <div class="metric-icon icon-cargo">⚖</div>
+                    <div class="metric-icon" style="background-image: url('icon-cargo.png');">⚖</div>
                     <div class="metric-data">
-                        <div class="metric-value">
-                            <span data-lang="uk">100+ Тонн</span>
-                            <span data-lang="en">100+ Tons</span>
-                        </div>
-                        <div class="metric-label">
-                            <span data-lang="uk">Доставлено життєво необхідних вантажів та обладнання</span>
-                            <span data-lang="en">of Lifesaving Supplies & Equipment Delivered</span>
-                        </div>
+                        <div class="metric-value">100+ Тонн</div>
+                        <div class="metric-label"><span data-lang="uk">Доставлено вантажів</span><span data-lang="en">Cargo Delivered</span></div>
                     </div>
                 </div>
             </div>
@@ -494,21 +303,13 @@
 
     <script>
         function setLang(lang) {
-            // Оновлюємо клас на body
             document.body.className = 'lang-' + lang;
-            document.documentElement.lang = lang;
-            
-            // Перемикаємо активний стан кнопок
             const btns = document.querySelectorAll('.lang-btn');
             btns.forEach(btn => {
-                if (btn.textContent.toLowerCase().includes(lang.substring(0,2))) {
-                    btn.classList.add('active');
-                } else {
-                    btn.classList.remove('active');
-                }
+                btn.classList.toggle('active', btn.textContent.toLowerCase().includes(lang.substring(0,2)));
             });
         }
     </script>
 </body>
-  </html>
-                  
+    </html>
+    
