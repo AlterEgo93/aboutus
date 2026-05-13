@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1400">
-    
+    <meta name="color-scheme" content="dark">
     <title>Alter Ego</title>
     <!-- Підключення шрифтів -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,6 +26,7 @@
     <style>
         :root {
             --bg-base: #0a0d12;
+            color-scheme: dark;
             --panel-bg: rgba(20, 25, 35, 0.45);
             --panel-border: rgba(255, 255, 255, 0.15);
             --panel-border-highlight: rgba(140, 190, 255, 0.4);
@@ -40,6 +41,10 @@
             margin: 0;
             padding: 0;
             transition: all 0.3s ease;
+        }
+        
+        html {
+            background-color: var(--bg-base);
         }
 
         body {
